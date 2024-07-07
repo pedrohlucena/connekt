@@ -3,12 +3,13 @@ import { graphqlHTTP } from 'express-graphql'
 import { GraphQLSchema } from 'graphql'
 import { sequelize } from './config'
 import cors from 'cors'
+import { env } from './env'
 
 const schema = {} as GraphQLSchema
 
 ;(async () => {
   const app = express()
-  const port = process.env.PORT || 4000
+  const port = env.PORT || 4000
 
   app.use(cors())
   app.use(
